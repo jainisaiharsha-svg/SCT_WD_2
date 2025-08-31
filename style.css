@@ -1,0 +1,149 @@
+:root {
+    --bg-color: #12121a;
+    --display-bg: #1a1a24;
+    --primary-accent: #00e5ff;
+    --secondary-accent: #ff4d4d;
+    --text-color: #f0f0f0;
+    --border-color: #333340;
+    --font-display: 'Orbitron', sans-serif;
+    --font-ui: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-ui);
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-block-size: 100vh;
+    background-image: radial-gradient(circle at center, #1a1a24, #12121a);
+}
+
+.stopwatch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: var(--display-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.timer-display {
+    inline-size: 100%;
+    text-align: center;
+}
+
+#time-display {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    text-shadow: 0 0 15px var(--primary-accent), 0 0 30px rgba(0, 229, 255, 0.5);
+    letter-spacing: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-btn {
+    inline-size: 70px;
+    block-size: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.control-btn svg {
+    inline-size: 30px;
+    block-size: 30px;
+}
+
+.control-btn:hover {
+    border-color: var(--primary-accent);
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.control-btn.primary {
+    inline-size: 90px;
+    block-size: 90px;
+    border-color: var(--primary-accent);
+}
+
+.control-btn.primary svg {
+    inline-size: 40px;
+    block-size: 40px;
+    fill: var(--primary-accent);
+}
+
+.control-btn#reset-btn:hover {
+    border-color: var(--secondary-accent);
+    color: var(--secondary-accent);
+}
+
+.laps-board {
+    inline-size: 100%;
+    max-block-size: 200px;
+    overflow-y: auto;
+    padding-inline-end: 10px; /* For scrollbar */
+}
+
+#laps-list {
+    list-style: none;
+    inline-size: 100%;
+    font-size: 1.1rem;
+}
+
+#laps-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-block-end: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+}
+
+#laps-list li:first-child {
+    font-weight: 500;
+    color: var(--primary-accent);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+.laps-board::-webkit-scrollbar {
+  inline-size: 8px;
+}
+.laps-board::-webkit-scrollbar-track {
+  background: var(--display-bg);
+}
+.laps-board::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}

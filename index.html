@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="stopwatch-container">
+        <figure class="timer-display">
+            <figcaption id="time-display">00:00.00</figcaption>
+        </figure>
+
+        <div class="controls">
+            <button id="reset-btn" class="control-btn" aria-label="Reset Timer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C15.6536 20 18.8284 17.5259 19.7739 14.25L17.8824 13.65C17.1537 16.0921 14.7937 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6V10L17 5L12 0V4Z"/></svg>
+            </button>
+            <button id="start-pause-btn" class="control-btn primary" aria-label="Start Timer">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14V19.14L19 12.14L8 5.14Z"/></svg>
+                <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><path d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z"/></svg>
+            </button>
+            <button id="lap-btn" class="control-btn" aria-label="Record Lap">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14.4 6L14 4H5V21H7V14H12.6L13 16H20V6H14.4Z"/></svg>
+            </button>
+        </div>
+
+        <section class="laps-board">
+            <ol id="laps-list"></ol>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
